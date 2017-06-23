@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>window8</title>
+		<link rel="stylesheet" type="text/css" href="css/show.css">
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script>
+			$(function(){
+			var i = 0;
+			var timer = null;
+			$("#u1 li").hover(function(){
+   	 	    		$(this).addClass("on").siblings().removeClass("on");
+			})
+			$(".jh").click(function(){
+				$(".lb").css("display","block");
+				$("#yuandian").css("display","block");
+				$(".tu").css("display","block");
+				$(this).html("-")
+				$(".jh").css("background-color","#FFFFFF");
+				$(".jh").css("color","#19a2de");
+				$(this).click(function(){
+					$(".lb").css("display","none");
+					$("#yuandian").css("display","none");
+					$(".tu").css("display","none");
+					$(".jh").css("background-color","#19a2de");
+					$(".jh").css("color","#FFFFFF")
+				$(this).html("+");
+			})
+		})
+			function ab(a){	
+					$("#yuandian span").eq(a).addClass('b').siblings().removeClass('b');
+					$(".lb>img").eq(a).fadeIn("show").siblings().fadeOut();
+				}
+			$("#yuandian span").click(function(){
+				index=$(this).index()
+					ab(index)				
+					}).eq(0).trigger("click")
+			$("#r").click(function(){
+					i++;
+					if (i > 2){
+						i = 0;
+					}
+					ab(i);
+				})
+				$("#l").click(function(){
+					i--;
+					if (i < 0){
+						i = 2;
+					}
+					ab(i);
+				})
+				$(".lb").hover(
+				function(){
+					if(timer){
+   	 	    	 	clearInterval(timer);
+   	 	    	 }
+				},function(){
+					timer=setInterval(function(){
+					$("#r").click();
+				},2000);
+				}).trigger("mouseleave");
+		})
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="nav">
+				<div class="logo">
+					<img src="images/logo.png" alt="" />
+				</div>
+				<p>Matrix</p>
+				<div class="nav1">
+  <ul>
+    <li><a href="#">HOME</a>
+       <ul>
+            <li><a href="#">二级</a></li>
+            <li><a href="#">二级栏目</a></li>
+            <li><a href="#">二级栏目</a></li>
+        </ul>
+    </li>
+    <li><a href="#">PORT</a>
+      <ul>
+            <li><a href="#">二级</a></li>
+            <li><a href="#">二级栏目</a></li>
+            <li><a href="#">二级栏目</a></li>
+         
+        </ul>
+    </li>
+    <li><a href="#">BLOG</a>
+     <ul>
+         <li><a href="#">二级</a></li>
+         <li><a href="#">二级栏目</a></li>
+         <li><a href="#">二级栏目</a></li>
+          
+        </ul>
+    </li>
+    <li><a href="#">FEAT</a>
+     <ul>
+         <li><a href="#">二级</a></li>
+         <li><a href="#">二级栏目</a></li>
+         <li><a href="#">二级栏目</a></li>
+          
+        </ul>
+    </li>
+    <li><a href="#">ABOUT</a>
+     <ul>
+         <li><a href="#">二级</a></li>
+         <li><a href="#">二级栏目</a></li>
+         <li><a href="#">二级栏目</a></li>
+        </ul>
+    </li>
+    <li><a href="#">CONTACT</a></li>
+  </ul>
+</div>
+			</div>
+			<div class="show">
+			<div class="jh">+</div>
+			<div class="lb">
+				<img src="images/slideimg1.png" alt="" />
+				<img src="images/slideimg2.png" alt="" />
+				<img src="images/slideimg3.png"/>
+			</div>
+			<div class="tu">
+				<div id="l"></div>
+				<div id="r"></div>
+			</div>
+			<div id="yuandian"><span></span><span></span><span></span></div>
+			
+		</div>
+			<div class="content">
+				<div class="content-L">
+					<img src="images/placeholder/large_blank.png" alt="" />
+				</div>
+				<div class="content-Z">
+					<div class="content-Zs">
+						<img src="images/placeholder/medium_blank.png" alt="" />
+					</div>
+					<div class="content-Zx">
+						<div class="Zx1">
+							<img src="images/placeholder/small_blank.png" alt="" />
+						</div>
+						<div class="Zx2">
+							<img src="images/articles/quotation_1.png"alt="" />
+							<img src="images/articles/quotation_2.png" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="content-R">
+					<div class="content-Rs">
+						<div class="r1"><img src="images/placeholder/small_blank.png" alt="" /></div>
+						<div class="r2"><img src="images/placeholder/small_blank.png" alt="" /></div>
+					</div>
+					<div class="content-Rx">
+						<div class="r3"><img src="images/placeholder/small_blank.png" alt="" /></div>
+						<div class="r4"><img src="images/placeholder/small_blank.png" alt="" /></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="box">
+				<div class="box1">
+					<div class="box1-s">
+						<div class="box1-s1"></div>
+						<div class="box1-s2">
+							<img src="images/video.png" alt="" />
+						</div>
+					</div>
+					<div class="box1-x">
+						<img src="images/placeholder/medium_blank.png" alt="" />
+					</div>
+				</div>
+				<div class="box2">
+					<div class="box2-s">
+						<img src="images/placeholder/small_blank.png" alt="" />
+					</div>
+					<div class="box2-x">
+						<img src="images/articles/html5.png" alt="" />
+					</div>
+				</div>
+				<div class="box3"></div>
+				<div class="box4">
+					<div class="box4-s">
+						<img src="images/placeholder/small_blank.png" alt="" />
+					</div>
+					<div class="box4-x">
+						<img src="images/placeholder/small_blank.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="jh">+</div>
+			<div class="footer">
+				<span class="f1"></span>
+				<span class="f2"></span>
+				<span class="f3"></span>
+				<span class="f4"></span>
+				<span class="f5"></span>
+				<span class="f6"></span>
+				<h6>Copyright @ 2012 Matrix Collct from <a href="#">网页模版</a></h6>
+			</div>
+		</div>
+
+		
+		
+	</body>
+</html>
